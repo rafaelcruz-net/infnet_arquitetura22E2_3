@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLite.API", "spotifylite\SpotifyLite.API.csproj", "{A14D70CA-D41E-435F-9471-86FF2056B636}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLite.Domain", "SpotifyLite.Domain\SpotifyLite.Domain.csproj", "{45C28FB1-45D5-4A9F-A549-8B559D0DEF38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A14D70CA-D41E-435F-9471-86FF2056B636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14D70CA-D41E-435F-9471-86FF2056B636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14D70CA-D41E-435F-9471-86FF2056B636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14D70CA-D41E-435F-9471-86FF2056B636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C28FB1-45D5-4A9F-A549-8B559D0DEF38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C28FB1-45D5-4A9F-A549-8B559D0DEF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C28FB1-45D5-4A9F-A549-8B559D0DEF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C28FB1-45D5-4A9F-A549-8B559D0DEF38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54289837-FE99-4B79-8589-FFC0BEB5E1DA}
+	EndGlobalSection
+EndGlobal
