@@ -19,6 +19,5 @@ namespace SpotifyLite.Domain.Album.ValueObject
 
         public String Name { get; set; }
 
-
     }
 }
