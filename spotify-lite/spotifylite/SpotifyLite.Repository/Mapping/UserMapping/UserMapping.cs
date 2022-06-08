@@ -30,6 +30,12 @@ namespace SpotifyLite.Repository.Mapping.UserMapping
                 p.Property(f => f.Value).HasColumnName("Password");
             });
 
+            builder.OwnsOne(x => x.CPF, p =>
+            {
+                p.Property(f => f.Value).HasColumnName("CPF");
+            });
+
+
         }
     }
 }
