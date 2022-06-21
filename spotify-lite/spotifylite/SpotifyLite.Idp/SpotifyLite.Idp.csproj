@@ -15,4 +15,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SpotifyLite.Domain\SpotifyLite.Domain.csproj" />
+    <ProjectReference Include="..\SpotifyLite.Repository\SpotifyLite.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SpotifyLite.Domain\SpotifyLite.Domain.csproj" />
+    <ProjectReference Include="..\SpotifyLite.Infrastructure\SpotifyLite.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

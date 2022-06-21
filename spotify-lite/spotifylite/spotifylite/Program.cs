@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using SpotifyLite.Domain.Album.Repository;
+using SpotifyLite.Domain.User.Repository;
+using SpotifyLite.Repository;
 using SpotifyLite.Repository.Context;
+using SpotifyLite.Repository.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,11 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<SpotifyContext>(c =>
-{
-    c.UseSqlServer(builder.Configuration.GetConnectionString("SpotifyDB"));
-});
-
+builder.Services.RegisterRepository(builder.Configuration.GetConnectionString("SpotifyDB"));
 
 var app = builder.Build();
 

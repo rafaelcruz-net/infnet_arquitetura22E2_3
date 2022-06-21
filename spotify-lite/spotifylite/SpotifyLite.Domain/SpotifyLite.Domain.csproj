@@ -10,4 +10,8 @@
     <PackageReference Include="FluentValidation" Version="11.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SpotifyLite.Infrastructure\SpotifyLite.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
