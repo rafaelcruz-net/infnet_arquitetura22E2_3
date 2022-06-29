@@ -1,4 +1,7 @@
+using IdentityModel;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.EntityFrameworkCore;
+using SpotifyLite.Application;
 using SpotifyLite.Domain.Album.Repository;
 using SpotifyLite.Domain.User.Repository;
 using SpotifyLite.Repository;
@@ -14,7 +17,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.RegisterRepository(builder.Configuration.GetConnectionString("SpotifyDB"));
+builder.Services
+       .RegisterApplication(builder.Configuration.GetConnectionString("SpotifyDB"));
+
+//builder.Services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+//                .AddJwtBearer(c =>
+//                {
+//                    c.TokenValidationParameters.ValidateIssuer = true;
+//                    c.TokenValidationParameters.ValidIssuer = "https://localhost:5001";
+//                    c.TokenValidationParameters.ValidateIssuerSigningKey = false;
+//                    c.TokenValidationParameters.ValidateAudience = false;
+//                });
 
 var app = builder.Build();
 
@@ -27,7 +40,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 app.MapControllers();
 

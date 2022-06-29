@@ -17,5 +17,10 @@ namespace SpotifyLite.Repository.Repository
         {
             
         }
+
+        public async Task<IEnumerable<Album>> GetAllAlbum()
+        {
+            return await Task.FromResult(this._set.Include(x => x.Musics).AsEnumerable());
+        }
     }
 }

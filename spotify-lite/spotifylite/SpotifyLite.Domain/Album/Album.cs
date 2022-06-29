@@ -15,7 +15,7 @@ namespace SpotifyLite.Domain.Album
         public string Description { get; set; }
         public string Backdrop { get; set; }
         public Band Band { get;set; }
-        public IList<Music> Musics {get; set; }
+        public virtual IList<Music> Musics {get; set; }
 
         public DateTime ReleaseDate { get; set; }
         

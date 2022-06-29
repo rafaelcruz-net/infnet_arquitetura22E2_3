@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SpotifyLite.Repository.Context
 {
     public class SpotifyContext : DbContext
@@ -26,6 +27,8 @@ namespace SpotifyLite.Repository.Context
             ILoggerFactory loggerFactory = LoggerFactory.Create(c => c.AddConsole());
 
             optionsBuilder.UseLoggerFactory(loggerFactory);
+
+            optionsBuilder.UseLazyLoadingProxies();
 
             base.OnConfiguring(optionsBuilder);
         }
