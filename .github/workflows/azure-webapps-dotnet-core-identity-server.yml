@@ -51,24 +51,21 @@ jobs:
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
-
-      - name: Enter folder API
-        run: cd ./spotify-lite/spotifylite/SpotifyLite.Idp
         
       - name: Listing directory folder
         run: ls -n
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build ./spotify-lite/spotifylite/SpotifyLite.Idp/SpotifyLite.Idp.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/api
+        run: dotnet publish ./spotify-lite/spotifylite/SpotifyLite.Idp/SpotifyLite.Idp.csproj -c Release -o ${{env.DOTNET_ROOT}}/idp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/api
+          path: ${{env.DOTNET_ROOT}}/idp
 
   deploy:
     permissions:
