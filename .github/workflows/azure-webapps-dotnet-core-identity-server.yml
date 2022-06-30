@@ -28,6 +28,8 @@ on:
   push:
     branches:
       - "master"
+    paths: 
+      - "spotify-lite/spotifylite/SpotifyLite.Idp/**"
   workflow_dispatch:
 
 permissions:
