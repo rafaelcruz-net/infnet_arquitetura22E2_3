@@ -54,6 +54,9 @@ jobs:
 
       - name: Enter folder API
         run: cd ./spotify-lite/spotifylite/SpotifyLite.Idp
+        
+      - name: Listing directory folder
+        run: ls -n
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
