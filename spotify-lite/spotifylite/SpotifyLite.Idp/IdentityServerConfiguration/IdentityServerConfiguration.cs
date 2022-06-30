@@ -27,7 +27,7 @@ namespace SpotifyLite.Idp.IdentityServerConfiguration
                     },
                     Scopes =
                     {
-                        "SpotifyLite-API"
+                        "SpotifyAPI"
                     }
                 }
             };

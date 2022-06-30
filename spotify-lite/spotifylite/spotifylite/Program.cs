@@ -20,14 +20,21 @@ builder.Services.AddSwaggerGen();
 builder.Services
        .RegisterApplication(builder.Configuration.GetConnectionString("SpotifyDB"));
 
-//builder.Services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
-//                .AddJwtBearer(c =>
-//                {
-//                    c.TokenValidationParameters.ValidateIssuer = true;
-//                    c.TokenValidationParameters.ValidIssuer = "https://localhost:5001";
-//                    c.TokenValidationParameters.ValidateIssuerSigningKey = false;
-//                    c.TokenValidationParameters.ValidateAudience = false;
-//                });
+builder.Services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(opt =>
+                {
+                    opt.Authority = "https://localhost:5001";
+                    opt.ApiName = "SpotifyLite";
+                    opt.ApiSecret = "SuperSenhaDificil";
+                });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("user-policy", p =>
+    {
+        p.RequireClaim("role", "spotify-user");
+    });
+});
 
 var app = builder.Build();
 
@@ -40,8 +47,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//app.UseAuthentication();
-//app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
